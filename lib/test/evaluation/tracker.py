@@ -167,7 +167,6 @@ class Tracker:
 
         #params = self.get_parameters()
         params = self.params
-
         debug_ = debug
         if debug is None:
             debug_ = getattr(params, 'debug', 0)
@@ -239,9 +238,11 @@ class Tracker:
             frame_disp = frame.copy()
 
             # Draw box
+            tic = cv2.getTickCount()
             out = tracker.track(frame)
             state = [int(s) for s in out['target_bbox']]
             output_boxes.append(state)
+            fps = cv2.getTickFrequency()/(cv2.getTickCount() - tic)
 
             cv.rectangle(frame_disp, (state[0], state[1]), (state[2] + state[0], state[3] + state[1]),
                          (0, 255, 0), 5)

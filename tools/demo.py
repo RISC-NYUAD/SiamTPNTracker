@@ -38,8 +38,7 @@ def main():
     parser.add_argument('--sequence', type=str, default=None, help='Sequence number or name.')
     parser.add_argument('--debug', type=int, default=0, help='Debug level.')
     parser.add_argument('--epoch', type=int, default=100)
-    parser.add_argument('--windows_factor', type=float, default=0.99)
-    parser.add_argument('--interval', type=int, default=25)
+    parser.add_argument('--windows_factor', type=float, default=0.01)
     parser.add_argument('--cpu', type=int, default=0)
 
     args = parser.parse_args()
@@ -51,7 +50,6 @@ def main():
 
     params_dict = {'checkpoint': args.epoch}
     params_dict['windows_factor'] = args.windows_factor
-    params_dict['interval'] = args.interval
     params_dict['debug'] = args.debug
     params_dict['cpu'] = args.cpu
 

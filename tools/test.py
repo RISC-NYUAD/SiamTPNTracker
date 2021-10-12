@@ -42,7 +42,7 @@ def main():
     parser.add_argument('--threads', type=int, default=0, help='Number of threads.')
     parser.add_argument('--num_gpus', type=int, default=8)
     parser.add_argument('--epoch', type=int, default=100)
-    parser.add_argument('--windows_factor', type=float, default=0.99)
+    parser.add_argument('--windows_factor', type=float, default=0.01)
     parser.add_argument('--cpu', type=int, default=0)
 
     args = parser.parse_args()

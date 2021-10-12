@@ -35,11 +35,8 @@ class SiamTPN(BaseTracker):
         z_patch_arr, _ = sample_target_fast(image, gt_box,self.params.template_factor,
                                                     output_sz=self.params.template_size)
         template = self.preprocessor.process(z_patch_arr)
-        # forward the template once
         ort_inputs = {'img_z': template}
         self.kernel = self.ort_sess_z.run(None, ort_inputs)[0]       
-        #print(self.kernel.shape)
-        # save states
         self.state = info['init_bbox']
         self.frame_id = 0
 
@@ -47,7 +44,6 @@ class SiamTPN(BaseTracker):
     def track(self, image, info: dict = None):
         H, W, _ = image.shape
         self.frame_id += 1
-        
         x_patch_arr, resize_factor = sample_target_fast(image, self.state, self.params.search_factor,
                                                                 output_sz=self.params.search_size)  # (x1, y1, w, h)
 

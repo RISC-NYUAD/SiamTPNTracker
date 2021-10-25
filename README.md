@@ -6,7 +6,7 @@ This is the official implementation of the SiamTPN (WACV2022). The tracker inter
 
 ![AO_Speed_GOT10K](imgs/got10_ao_speed.png)
 
-[\[Paper\]]()  [\[Raw Results\]](https://drive.google.com/drive/folders/1YUzqgifqhXVK_PrQNg5w467EGlX9yG-M?usp=sharing)   [\[Drone Tracking Videos\]](https://drive.google.com/drive/folders/1joOkom2sDZ-Ke2eyYIQX5redjpku38Lk?usp=sharing)  [\[Models\]](https://drive.google.com/drive/folders/1Aryamx7-UP9G3R9_Zn7IJ95Iyl3soVQx?usp=sharing)
+[\[Paper\]](https://arxiv.org/abs/2110.08822)  [\[Raw Results\]](https://drive.google.com/drive/folders/1YUzqgifqhXVK_PrQNg5w467EGlX9yG-M?usp=sharing)   [\[Drone Tracking Videos\]](https://drive.google.com/drive/folders/1joOkom2sDZ-Ke2eyYIQX5redjpku38Lk?usp=sharing)  [\[Models\]](https://drive.google.com/drive/folders/1Aryamx7-UP9G3R9_Zn7IJ95Iyl3soVQx?usp=sharing)
 
 ## Training
 
@@ -64,6 +64,15 @@ python tools/test.py siamtpn_onnx shufflenet_l345_192 --dataset_name got10k_val 
 
 
 ## Citation
+If you find this repo useful, please cite with
+```
+@article{xing2021siamese,
+  title={Siamese Transformer Pyramid Networks for Real-Time UAV Tracking},
+  author={Xing, Daitao and Evangeliou, Nikolaos and Tsoukalas, Athanasios and Tzes, Anthony},
+  journal={arXiv preprint arXiv:2110.08822},
+  year={2021}
+}
+```
 
 
 ## Acknowledge
